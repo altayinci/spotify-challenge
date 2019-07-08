@@ -45,7 +45,7 @@ class SpotifyClient(object):
     # After search, we obtains more than one singer but first result probably is our singer.
     # We can get singer id only with this method.
 
-    def search_singer(self, data):
+    def get_singer(self, data):
 
         search_singers_fragment = "search?"
         search_url = self.base_url + search_singers_fragment + "&".join(["%s=%s" % (k, v) for k, v in data.iteritems()])
@@ -62,7 +62,7 @@ class SpotifyClient(object):
 
     def get_top_tracks(self, data):
 
-        singer_id, headers = self.search_singer(data)
+        singer_id, headers = self.get_singer(data)
         get_artist_fragment = "artists"
         get_top_tracks_fragment = "top-tracks"
         market = 'US'
