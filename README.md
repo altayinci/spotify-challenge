@@ -21,4 +21,4 @@ Json: For convert values from json to Python values.
 
 Random: For choose random singer.
 
-Os and Sys: For givin path of genre.json
+Os and Sys: For giving path of genre.json
