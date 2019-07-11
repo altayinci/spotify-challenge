@@ -11,6 +11,9 @@ Second page(Result) : Here is list of all ten tracks of given genre. You can go 
 Third page(Not found): If there is not any data about this genre, it is redirected to first page using button.
 
 
+
+
+
 Libraries:
 
 Requests: For request and getting response from Spotify API.
