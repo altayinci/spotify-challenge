@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Ten Tracks</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<p>You can come back and search again with this button</p>
+<form action="/tracks">
+    <button type="submit" value="Come back!" style="height:50px; width:150px">Come back and search again!</button>
+</form>
+
+
+Singer Name:
+<p>{{singer}}</p>
+<table>
+    <tr>
+        <th>Track Name</th>
+        <th>Image of Track's Album Cover</th>
+        <th>Redirect Link</th>
+    </tr>
+    {% for track in tracks_list %}
+    <tr>
+        <td>{{ track.album.name }}</td>
+        <td><img src={{ track.album.images[0].url }}></td>
+        <td>{{ track.preview_url }}</td>
+{% endfor %}
+</table>
+
+</body>
+</html>
