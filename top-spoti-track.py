@@ -39,14 +39,17 @@ def get_song_list():
                                base_url=credentials['base_url'])
 
         data = {'q': random_singer, 'type': 'artist'}
-        songs_list = client.get_top_tracks(data)
+        tracks_list = client.get_top_tracks(data)
 
-        return jsonify(songs_list)
+        return render_template('all_list.html', tracks_list=tracks_list['tracks'], singer=random_singer.upper())
 
     else:
-        flash("There is not this genre in list")
-        return redirect(url_for('get_track_genre'))
+        return redirect(url_for('not_found'))
 
+
+@app.route('/not_found')
+def not_found():
+    return render_template('not_found.html')
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port="8080")
