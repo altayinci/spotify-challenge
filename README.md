@@ -25,3 +25,9 @@ Json: For convert values from json to Python values.
 Random: For choose random singer.
 
 Os and Sys: For giving path of genre.json
+
+# Pages:
+
+Top-spoti-track: It is thought as controller. It makes routing and necessary functions.
+Spotifyclient: It is client of challenge. Request and responses are handled here.
+Credentials: Spotify client creds holded here.
